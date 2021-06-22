@@ -1,0 +1,6 @@
+package com.cos.secondapp;
+
+public class User  {
+	private String username;
+	private String password;
+}
