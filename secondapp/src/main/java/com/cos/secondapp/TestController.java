@@ -15,15 +15,15 @@ public class TestController {
 	// http://localhost:8000/
 	@GetMapping("/")
 	public String get() {
-		return "get";
+		return "get"; // MessageConverter->String->text/plain
 	}
 	
 	// http://localhost:8000/
 	@PostMapping("/")
-	public String post(@RequestBody User data) {// x-www-form-urlencoded(JSP 에서 getParameter기능을 한다) 기본전략,
+	public User post(User data) {// x-www-form-urlencoded(JSP 에서 getParameter기능을 한다) 기본전략,
 		System.out.println(data.getUsername());
 		System.out.println(data.getPassword());
-		return "post";
+		return data; // Message->User(오브젝트)-> appcation/json(공용)
 	}
 	
 	// http://localhost:8000/
@@ -31,12 +31,11 @@ public class TestController {
 	public String put(@RequestBody User data) {// x-www-form-urlencoded(JSP 에서 getParameter기능을 한다) 기본전략,(오브젝트로 받으면 자동파싱)
 		System.out.println(data.getUsername()); // @Request Body =>  BufferReader (오브젝트로 받으면 자동 파싱)
 		System.out.println(data.getPassword());
-		return "put";
+		return "put"; //Message -> test/plain
 	}
 	// http://localhost:8000/
 	@DeleteMapping("/")
 	public String delete() {
 		return "delete";
-		}
-		
+		}		
 }
