@@ -7,9 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h1>Home</h1>
-<h3>requestScope.data</h3>
-<h3>sessionScope.data</h3>
-${data}	
+${data}
 </body>
 </html>

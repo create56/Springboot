@@ -20,7 +20,8 @@ public class HomeController {
 	}
 
 	@GetMapping("/home")
-	public String home(Model model) {
+	// 1.생성자 주입
+	public String home(Model model) { // <- Dependency Injection
 		if (session != null) {
 			System.out.println("세션 널 아니에요");
 		}
