@@ -13,6 +13,7 @@ public class User {
 	private String username; // 번호 증가하는 키로 사용
 	private String password;
 	private String email;
+	private String address;
 	
 	public int getId() {
 		return id;
@@ -38,5 +39,12 @@ public class User {
 	public void setEmail(String email) {
 		this.email = email;
 	}
+	public String getAddress() {
+		return address;
+	}
+	public void setAddress(String address) {
+		this.address = address;
+	}
+	
 	
 }
