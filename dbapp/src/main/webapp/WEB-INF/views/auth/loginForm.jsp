@@ -3,18 +3,24 @@
     
 <%@ include file="../layout/header.jsp" %>
 
+
 <div class="container">
   <h1>로그인창</h1>
-<form action="/auth/login" method="post">
+<form action="/">
   <div class="form-group">
     <label for="username">username:</label>
-    <input type="text" class="form-control" placeholder="Enter username" name="username" required="required"/>
+    <input type="text" class="form-control" placeholder="Enter email" name="username">
   </div>
   <div class="form-group">
-    <label for="password">Password:</label>
-    <input type="password" class="form-control" placeholder="Enter password" name="password" required="required"/>
+    <label for="pwd">Password:</label>
+    <input type="password" class="form-control" placeholder="Enter password" id="pwd">
   </div>
-  <button type="submit" class="btn btn-primary">로그인</button>
+  <div class="form-group form-check">
+    <label class="form-check-label">
+      <input class="form-check-input" type="checkbox">
+    </label>
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
 </form>
 </div>
 
