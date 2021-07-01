@@ -4,7 +4,11 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.Lob;
+import javax.persistence.ManyToOne;
+
+import com.korea.dbapp.domain.user.User;
 
 // 글쓰기 만들기
 @Entity
@@ -16,7 +20,18 @@ public class Post {
 	@Lob
 	private String content;
 	
-	private int userId;
+	// jpa(Java Persistence API) 자바로 영구히 데이터 저장 파일/데이터베이스에 함수의 모임
+	@JoinColumn(name = "myId")
+	@ManyToOne
+	private User user; // ORM 사용-> Hibernate 사용 -> foreign Key 생성
+	
+	public User getUser() {
+		return user;
+	}
+
+	public void setUser(User user) {
+		this.user = user;
+	}
 
 	public int getId() {
 		return id;
@@ -42,13 +57,4 @@ public class Post {
 		this.content = content;
 	}
 
-	public int getUserId() {
-		return userId;
-	}
-
-	public void setUserId(int userId) {
-		this.userId = userId;
-	}
-	
-	
 }
